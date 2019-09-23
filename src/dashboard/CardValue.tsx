@@ -12,7 +12,9 @@ const useStyles = makeStyles({
     },
 });
 
-const CardValue: React.FC<{ title: string; value: string }> = ({ title, value }) => {
+type Props = { title: string; value: string };
+
+const CardValue = ({ title, value }: Props) => {
     const classes = useStyles();
     return (
         <Card className={classes.card}>

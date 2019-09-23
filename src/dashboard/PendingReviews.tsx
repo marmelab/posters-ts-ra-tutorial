@@ -39,7 +39,9 @@ const ReferencedCustomerProvider = ({ record, children }) => {
 
 type Review = { id: string; rating: number; comment: string };
 
-const PendingReviews: React.FC<{ reviews: Review[] }> = ({ reviews }) => {
+type Props = { reviews: Review[] };
+
+const PendingReviews = ({ reviews }: Props) => {
     return (
         <Card>
             <CardValue title="Pending Reviews" value={reviews.length.toString()} />

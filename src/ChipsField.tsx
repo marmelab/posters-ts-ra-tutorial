@@ -13,7 +13,9 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export const ChipsField: React.FC<{ record?: any; source: string }> = ({ record, source }) => {
+type Props = { record?: any; source: string };
+
+export const ChipsField = ({ record, source }: Props) => {
     const classes = useStyles();
 
     return (

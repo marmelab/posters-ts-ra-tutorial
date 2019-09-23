@@ -1,10 +1,14 @@
 import React from 'react';
 
-interface Address {
+type Address = {
     address: string;
     city: string;
     zipcode: string;
-}
+};
 
-export const AddressField: React.FC<{ record?: Address }> = ({ record }) =>
+type Props = {
+    record?: Address;
+};
+
+export const AddressField = ({ record }: Props) =>
     record ? <div>{`${record.address}, ${record.city} ${record.zipcode}`}</div> : null;

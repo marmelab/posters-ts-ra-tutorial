@@ -9,7 +9,9 @@ const useStyles = makeStyles({
     },
 });
 
-const MonthlyRevenue: React.FC<{ value: string }> = ({ value }) => {
+type Props = { value: string };
+
+const MonthlyRevenue = ({ value }: Props) => {
     const classes = useStyles();
     return (
         <div className={classes.main}>

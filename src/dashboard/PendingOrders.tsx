@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactChild } from 'react';
 import { ReferenceField } from 'react-admin';
 import { format, parseISO } from 'date-fns';
 
@@ -11,13 +11,13 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 
-const AvatarField: React.FC<{ record?: { avatar: string } }> = ({ record }) =>
+const AvatarField = ({ record }: { record?: { avatar: string } }) =>
     record ? <Avatar src={record.avatar} /> : null;
 
-const FullName: React.FC<{ record?: { first_name: string; last_name: string } }> = ({ record }) =>
+const FullName = ({ record }: { record?: { first_name: string; last_name: string } }) =>
     record ? <span>{`${record.first_name} ${record.last_name}`}</span> : null;
 
-const ReferencedCustomer: React.FC<{ record: any }> = ({ record, children }) => (
+const ReferencedCustomer = ({ record, children }: { record: any; children: ReactChild }) => (
     <ReferenceField record={record} basePath="/commands" source="customer_id" reference="customers">
         {children}
     </ReferenceField>
@@ -25,7 +25,7 @@ const ReferencedCustomer: React.FC<{ record: any }> = ({ record, children }) => 
 
 type Order = { id: string; date: string; basket: any[]; total: number };
 
-const PendingOrders: React.FC<{ orders: Order[] }> = ({ orders }) => {
+const PendingOrders = ({ orders }: { orders: Order[] }) => {
     return (
         <Card>
             <CardHeader title="Pending Orders" />

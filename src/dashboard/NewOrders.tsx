@@ -9,7 +9,9 @@ const useStyles = makeStyles({
     },
 });
 
-const NewOrders: React.FC<{ value: number }> = ({ value }) => {
+type Props = { value: number };
+
+const NewOrders = ({ value }: Props) => {
     const classes = useStyles();
     return (
         <div className={classes.main}>

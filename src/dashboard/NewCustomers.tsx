@@ -10,8 +10,9 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 
 type Customer = { id: number; first_name: string; last_name: string; avatar: string };
+type Props = { customers: Customer[] };
 
-const NewCustomers: React.FC<{ customers: Customer[] }> = ({ customers }) => {
+const NewCustomers = ({ customers }: Props) => {
     return (
         <Card>
             <CardValue title="New Customers" value={customers.length.toString()} />
